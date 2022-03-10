@@ -1,0 +1,3 @@
+a. The exponential growth is found in all Figures. However the one that I prefer is Figure 3 since its shown in an incremental straight line. However, each Figure shows evidence of exponential growth as shown in the incremental straight line in each chart.
+b. Each figure shows asmptotic order. However Figure 2 seems obvious of an asymptotic order. Because they are in the same shape in each Figure.
+c. Figure 2 seems best evidence of not O(n) since its not constant and is not in a straight line.
