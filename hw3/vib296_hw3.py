@@ -75,12 +75,126 @@ plt.show()
 # %%
 
 
-"""### % Q2 calucate and show percent of cases occurred in each month
+"""### % Q2 calculate and show percent of cases occurred in each month
 
 """
-
+mCase = (sum(data[0])/sum(sum(data[0]))) * 100
+muCase = (sum(data[1]) / sum(sum(data[1]))) * 100
+chPCase = (sum(data[2]) / sum(sum(data[2]))) * 100
+arrCases = np.array([mCase, muCase, chPCase])
 plt.figure()
-
+plt.plot(arrCases[0])
+plt.plot(arrCases[1])
+plt.plot(arrCases[2])
+#plt.plot(arrCases[1])
+#plt.plot(arrCases[2])
+#plt.xticks([1,2,3])
+plt.xlim(0, 12, 2)
+#plt.ylim(0, 25)
+plt.xlabel('Month')
+plt.ylabel('Percent of cases')
+plt.legend(diseases)
 plt.title('Fig 2: Percent of cases in each month')
 plt.show()
 # %%
+
+
+"""### % Q3 Scatter plot and correlation, mean monthly cases of Measles vs mumps"""
+
+# Q3.1 scatter plot
+ind1 = 0
+ind2 = 1
+
+plt.figure()
+
+plt.title('Fig 3: Mean monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
+
+# Q3.2 Pearson correlation
+
+
+# Q3.2 Spearman correlation coefficient
+
+plt.show()
+
+print('Pearson corr: %.4f' % 0)
+print('Spearman corr: %.4f' % 0)
+# %%
+
+
+"""### % Q4 Scatter plot and correlation, annual cases of measles vs mumps"""
+
+# 4.1 scatter plot
+
+ind1 = 0
+ind2 = 1
+
+plt.figure()
+plt.title('Fig 4: Annual cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
+
+# 4.2 Pearson correlation coefficient
+
+
+# 4.3 Spearman correlation
+
+
+plt.show()
+
+print('Pearson correlation: %.4f' % 0)
+print('Spearman correlation: %.4f ' % 0)
+# %%
+
+
+"""### % Q5 Scatter plot and correlation, monthly cases of Measles vs mumps"""
+
+# 5.1 scatter plot and correlation in original space
+
+
+plt.figure()
+
+ind1 = 0
+ind2 = 1
+
+plt.title('Fig 5.1: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
+
+# Pearson correlation coefficient
+
+# Spearman correlation between annual cases of mumps vs chicken pox
+
+
+plt.show()
+
+print('Pearson correlation in orignal space: %.4f' % 0)
+print('Spearman correlation in original space: %.4f ' % 0)
+
+# 5.2 scatter plot and correlation in log space
+
+plt.figure()
+
+ind1 = 0
+ind2 = 1
+
+plt.title('Fig 5.2: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
+
+# Pearson correlation coefficient
+
+# Spearman correlation
+
+plt.show()
+
+print('Pearson correlation in log space: %.4f' % 0)
+print('Spearman correlation in log space: %.4f ' % 0)
+# %%
+
+
+"""### % Q6 (bonus) Correlation between number of mumps cases in different months"""
+
+# %%
+
+
+"""###% Q7 (Bonus) calculate and show average perecent of diseases occurred in each month"""
+
+
+
+
+
+
