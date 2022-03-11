@@ -104,16 +104,23 @@ plt.show()
 # Q3.1 scatter plot
 ind1 = 0
 ind2 = 1
+mMean = np.mean(data[0], 0)
+muMean = np.mean(data[1], 0)
 
-plt.figure()
-
-plt.title('Fig 3: Mean monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # Q3.2 Pearson correlation
-
+pearsonCal = scipy.stats.pearsonr(mMean, muMean)
 
 # Q3.2 Spearman correlation coefficient
+spearmanCal = scipy.stats.spearmanr(mMean,muMean)
 
+plt.figure()
+plt.xlabel('Mean monthly cases of Measles')
+plt.ylabel('Mean monthly cases of Mumps')
+plt.scatter(mMean, muMean)
+plt.legend(pearsonCal, spearmanCal)
+plt.xlim(0, 4000, 500)
+plt.title('Fig 3: Mean monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 plt.show()
 
 print('Pearson corr: %.4f' % 0)
@@ -127,16 +134,21 @@ print('Spearman corr: %.4f' % 0)
 
 ind1 = 0
 ind2 = 1
-
+mSum = np.sum(data[0], 1)
+muSum = np.sum(data[1], 1)
 plt.figure()
+plt.xlabel('Annual cases of Measles')
+plt.ylabel('Annual cases of Mumps')
+plt.scatter(mSum, muSum)
+plt.xlim(0,80000, 10000)
 plt.title('Fig 4: Annual cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # 4.2 Pearson correlation coefficient
-
+pearsonCal1 = scipy.stats.pearsonr(mSum, muSum)
 
 # 4.3 Spearman correlation
-
-
+spearmanCal1 = scipy.stats.spearmanr(mSum, muSum)
+plt.legend(pearsonCal1, spearmanCal1)
 plt.show()
 
 print('Pearson correlation: %.4f' % 0)
@@ -153,7 +165,13 @@ plt.figure()
 
 ind1 = 0
 ind2 = 1
+mSum1 = np.sum(data[0], 1)
+muSum1 = np.sum(data[1], 1)
 
+plt.xlabel('Monthly cases of Measles')
+plt.ylabel('Monthly cases of Mumps')
+plt.scatter(mSum1, muSum1)
+plt.xlim(0,25000, 5000)
 plt.title('Fig 5.1: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # Pearson correlation coefficient
@@ -165,7 +183,7 @@ plt.show()
 
 print('Pearson correlation in orignal space: %.4f' % 0)
 print('Spearman correlation in original space: %.4f ' % 0)
-
+# %%
 # 5.2 scatter plot and correlation in log space
 
 plt.figure()
