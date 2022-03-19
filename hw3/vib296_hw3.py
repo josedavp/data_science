@@ -175,13 +175,13 @@ plt.ylim(0,2000, 250)
 plt.title('Fig 5.1: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # Pearson correlation coefficient
-
+pearsonCal2 = scipy.stats.pearsonr(mSum1, muSum1)
 # Spearman correlation between annual cases of mumps vs chicken pox
-
-
+spearmanCal2 = scipy.stats.spearmanr(mSum1, muSum1)
+plt.legend(pearsonCal2, spearmanCal2)
 plt.show()
 
-print('Pearson correlation in origInal space: %.4f' % 0)
+print('Pearson correlation in original space: %.4f' % 0)
 print('Spearman correlation in original space: %.4f ' % 0)
 # %%
 # 5.2 scatter plot and correlation in log space
@@ -201,9 +201,10 @@ plt.xscale('log')
 plt.title('Fig 5.2: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # Pearson correlation coefficient
-
+pearsonCal3 = scipy.stats.pearsonr(mSum2, muSum2)
 # Spearman correlation
-
+spearmanCal3 = scipy.stats.spearmanr(mSum2, muSum2)
+plt.legend(pearsonCal3, spearmanCal3)
 plt.show()
 
 print('Pearson correlation in log space: %.4f' % 0)
