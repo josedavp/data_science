@@ -125,6 +125,7 @@ plt.show()
 
 print('Pearson corr: %.4f' % 0)
 print('Spearman corr: %.4f' % 0)
+
 # %%
 
 
@@ -160,18 +161,17 @@ print('Spearman correlation: %.4f ' % 0)
 
 # 5.1 scatter plot and correlation in original space
 
-
-plt.figure()
-
 ind1 = 0
 ind2 = 1
-mSum1 = np.sum(data[0], 1)
-muSum1 = np.sum(data[1], 1)
-
+mSum1 = np.multiply(data[0], 1)
+muSum1 = np.multiply(data[1], 1)
+plt.figure()
 plt.xlabel('Monthly cases of Measles')
 plt.ylabel('Monthly cases of Mumps')
 plt.scatter(mSum1, muSum1)
-plt.xlim(0,25000, 5000)
+#plt.xlim(0,25000, 5000)
+plt.ylim(0,2000, 250)
+
 plt.title('Fig 5.1: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # Pearson correlation coefficient
@@ -181,16 +181,23 @@ plt.title('Fig 5.1: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]
 
 plt.show()
 
-print('Pearson correlation in orignal space: %.4f' % 0)
+print('Pearson correlation in origInal space: %.4f' % 0)
 print('Spearman correlation in original space: %.4f ' % 0)
 # %%
 # 5.2 scatter plot and correlation in log space
 
-plt.figure()
-
 ind1 = 0
 ind2 = 1
+mSum2 = np.multiply(data[0], 1)
+muSum2 = np.multiply(data[1], 1)
 
+plt.figure()
+plt.xlabel('Monthly cases of Measles')
+plt.ylabel('Monthly cases of Mumps')
+plt.scatter(mSum2, muSum2)
+#plt.xlim(0,25000, 5000)
+plt.yscale('log')
+plt.xscale('log')
 plt.title('Fig 5.2: Monthly cases of %s vs %s' % (diseases[ind1], diseases[ind2]))
 
 # Pearson correlation coefficient
